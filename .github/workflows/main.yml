@@ -9,6 +9,18 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.0
+      with:
+        # Repository name with owner. For example, actions/checkout
+        repository: ${{ github.repository }}
+        # The branch, tag or SHA to checkout. When checking out the repository that triggered a workflow, this defaults to the reference or SHA for that event.  Otherwise, uses the default branch.
+        # ref: # optional
+        fetch-depth: 1
+        # Whether to fetch tags, even if fetch-depth > 0.
+        fetch-tags: true
+        # Whether to show progress status output when fetching.
+        show-progress: false
     - name: List files
       run: |
         ls -lrt
