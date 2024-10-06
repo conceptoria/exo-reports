@@ -1,10 +1,10 @@
 name: Deployment
 concurrency: production
 on:
-  workflow_dispatch
-  # push:
-  #  branches:
-  #    - main
+  # workflow_dispatch
+  push:
+   branches:
+     - main
 jobs:
   deployment:
     runs-on: ubuntu-latest
