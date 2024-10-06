@@ -100,13 +100,13 @@ PrivateData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
         Tags = @(
-            "Exchange Online", 
+            "ExchangeOnline", 
             "Reports", 
             "Auditing", 
             "Monitoring",
             "Permissions", 
-            "Office 365", 
-            "Microsoft 365", 
+            "Office365", 
+            "Microsoft365", 
             "PowerShell"
         )
 
