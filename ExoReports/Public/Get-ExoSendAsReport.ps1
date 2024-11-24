@@ -2,14 +2,19 @@ function Get-ExoSendAsReport {
   [CmdletBinding()]
   param (
     [Parameter(Mandatory = $true)]
-    [string]$Path
+    [string]$Path,
+    [Parameter(Mandatory = $false)]
+    [switch]$AlreadyConnected = $false
   )
-  try {
-    # Connect to Exchange Online
-    Connect-ExchangeOnline
-  } catch {
-    Write-Error -Message "Failed to connect to Exchange Online: $_"
-    return
+  if (-not $AlreadyConnected) {
+    try {
+      "Connecting to Exchange Online"
+      Connect-ExchangeOnline
+    }
+    catch {
+      Write-Error -Message "Failed to connect to Exchange Online: $_"
+      return
+    }
   }
   try {
     $Parent = Split-Path -Path $Path -Parent
